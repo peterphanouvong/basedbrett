@@ -40,15 +40,18 @@ const router = createBrowserRouter([
 const handleRedirectCallback = (user, appState) => {
   console.log({ user, appState });
   if (appState?.redirectTo) {
-    window.location.href = appState.redirectTo;
+    console.log("Redirecting to", appState.redirectTo);
+    // window.location.href = appState.redirectTo;
   } else {
-    window.location.href = "/";
+    console.log("Redirecting to /");
+    // window.location.href = "/";
   }
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <KindeProvider
+      isDangerouslyUseLocalStorage={true}
       clientId={import.meta.env.VITE_KINDE_CLIENT_ID}
       domain={import.meta.env.VITE_KINDE_DOMAIN}
       logoutUri={window.location.origin}
