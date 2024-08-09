@@ -42,8 +42,10 @@ const handleRedirectCallback = (user, appState) => {
   if (appState?.redirectTo) {
     console.log("Redirecting to", appState.redirectTo);
     // window.location.href = appState.redirectTo;
+    window.history.replaceState({}, document.title, appState.redirectTo);
   } else {
     console.log("Redirecting to /");
+    window.history.replaceState({}, document.title, window.location.pathname);
     // window.location.href = "/";
   }
 };
