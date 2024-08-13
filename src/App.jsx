@@ -10,12 +10,14 @@ import Utility from "./views/Utility";
 import Partners from "./views/Partners";
 import Allocations from "./views/Allocations";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 function App() {
   return (
     <>
-      {/* <Helmet> */}
-      <script type="text/javascript">
-        {`
+      <Helmet>
+        <script type="text/javascript">
+          {`
             var ssaUrl = 'https://' + 'pixel.sitescout.com/iap/f6582fc6c2e08692';
             new Image().src = ssaUrl;
             (function(d) { 
@@ -29,9 +31,9 @@ function App() {
               doc.close(); 
             })(document);
           `}
-      </script>
-      <script type="text/javascript">
-        {`
+        </script>
+        <script type="text/javascript">
+          {`
             var ssaUrl = 'https://' + 'clickserv.sitescout.com/conv/7f641777ea0adf8d';
             new Image().src = ssaUrl;
             (function(d) { 
@@ -45,8 +47,8 @@ function App() {
               doc.close(); 
             })(document);
           `}
-      </script>
-      {/* </Helmet> */}
+        </script>
+      </Helmet>
 
       <div className="font-primary text-white w-full overflow-x-hidden">
         <img
